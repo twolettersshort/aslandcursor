@@ -165,7 +165,22 @@ while True:
 
 
     #o
-        if not (indexdown or middledown or ringdown or pinkydown) and hand_landmarks.landmark[finger_tips[0]].y > hand_landmarks.landmark[finger_base[0]].y and hand_landmarks.landmark[finger_tips[1]].y > hand_landmarks.landmark[finger_base[1]].y and hand_landmarks.landmark[finger_tips[2]].y > hand_landmarks.landmark[finger_base[2]].y and hand_landmarks.landmark[finger_tips[3]].y > hand_landmarks.landmark[finger_base[3]].y and hand_landmarks.landmark[thumb_tip[0]].y > hand_landmarks.landmark[finger_base[0]].y  and hand_landmarks.landmark[2].x > hand_landmarks.landmark[0].x :
+        thumb_tip_x = hand_landmarks.landmark[thumb_tip[0]].x
+        thumb_tip_y = hand_landmarks.landmark[thumb_tip[0]].y
+        index_tip_x = hand_landmarks.landmark[finger_tips[0]].x
+        index_tip_y = hand_landmarks.landmark[finger_tips[0]].y
+        middle_tip_x = hand_landmarks.landmark[finger_tips[1]].x
+        middle_tip_y = hand_landmarks.landmark[finger_tips[1]].y
+        ring_tip_x = hand_landmarks.landmark[finger_tips[2]].x
+        ring_tip_y = hand_landmarks.landmark[finger_tips[2]].y
+        pinky_tip_x = hand_landmarks.landmark[finger_tips[3]].x
+        pinky_tip_y = hand_landmarks.landmark[finger_tips[3]].y
+
+        if (abs(thumb_tip_x - index_tip_x) < 0.05 and abs(thumb_tip_y - index_tip_y) < 0.05 and
+            abs(thumb_tip_x - middle_tip_x) < 0.08 and abs(thumb_tip_y - middle_tip_y) < 0.08 and
+            abs(thumb_tip_x - ring_tip_x) < 0.1 and abs(thumb_tip_y - ring_tip_y) < 0.1 and
+            abs(thumb_tip_x - pinky_tip_x) < 0.12 and abs(thumb_tip_y - pinky_tip_y) < 0.12):
+            cv2.putText(frame, "O", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         
 
          #   if currentletter != "O":
@@ -185,11 +200,11 @@ while True:
             cv2.putText(frame, "R", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         
    # q
-        if (
-             not indexright and  middleright and  ringright and pinkyright and
-              hand_landmarks.landmark[finger_tips[0]].y > hand_landmarks.landmark[finger_base[0]].y and
-             hand_landmarks.landmark[thumb_tip[0]].y > hand_landmarks.landmark[finger_base[0]].y):
-                 cv2.putText(frame, "Q", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+       #if (
+       #      not indexright and  middleright and  ringright and pinkyright and
+       #       hand_landmarks.landmark[finger_tips[0]].y > hand_landmarks.landmark[finger_base[0]].y and
+       #      hand_landmarks.landmark[thumb_tip[0]].y > hand_landmarks.landmark[finger_base[0]].y):
+       #          cv2.putText(frame, "Q", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
 
     #s
