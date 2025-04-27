@@ -117,7 +117,7 @@ while True:
             cv2.putText(frame, "F", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
     #g
         #cv2.putText(frame, str(pinkyright), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-        if pinkyright and ringright and middleright and not indexright and hand_landmarks.landmark[thumb_tip[0]].y > hand_landmarks.landmark[finger_joint[0]].y and hand_landmarks.landmark[thumb_tip[0]].x>hand_landmarks.landmark[finger_joint[0]].y and hand_landmarks.landmark[thumb_tip[0]].x < hand_landmarks.landmark[thumb_joint[1]].x:
+        if pinkyright and ringright and middleright and not indexright and hand_landmarks.landmark[thumb_tip[0]].y > hand_landmarks.landmark[finger_joint[0]].y and hand_landmarks.landmark[thumb_tip[0]].x>hand_landmarks.landmark[finger_joint[0]].x and hand_landmarks.landmark[thumb_tip[0]].x < hand_landmarks.landmark[thumb_joint[1]].x:
             #if currentletter != "G":
             #    pag.write("G")
             #currentletter = "G"
@@ -277,4 +277,3 @@ while True:
 # Release the camera and destroy all windows
 cap.release()
 cv2.destroyAllWindows()
-
