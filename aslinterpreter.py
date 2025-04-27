@@ -135,8 +135,8 @@ while True:
             cv2.putText(frame, "I", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
     #j 
         # j
-        if not pinkyright and ringright and middleright and indexright and hand_landmarks.landmark[finger_tips[3]].y < hand_landmarks.landmark[finger_base[3]].y:
-            cv2.putText(frame, "J", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        #if not pinkyright and ringright and middleright and indexright and hand_landmarks.landmark[finger_tips[3]].y < hand_landmarks.landmark[finger_base[3]].y:
+          #  cv2.putText(frame, "J", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
     #
     #k 
