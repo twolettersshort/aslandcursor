@@ -134,7 +134,8 @@ while True:
             #currentletter = "I"
             cv2.putText(frame, "I", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
     #j 
-        if ringright and middleright and indexright and not pinkyright and hand_landmarks.landmark[thumb_tip[0]].y<hand_landmarks.landmark[finger_joint[0]].y:
+        # j
+        if not pinkyright and ringright and middleright and indexright and hand_landmarks.landmark[finger_tips[3]].y < hand_landmarks.landmark[finger_base[3]].y:
             cv2.putText(frame, "J", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
     #
@@ -200,11 +201,11 @@ while True:
             cv2.putText(frame, "R", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         
    # q
-       #if (
-       #      not indexright and  middleright and  ringright and pinkyright and
-       #       hand_landmarks.landmark[finger_tips[0]].y > hand_landmarks.landmark[finger_base[0]].y and
-       #      hand_landmarks.landmark[thumb_tip[0]].y > hand_landmarks.landmark[finger_base[0]].y):
-       #          cv2.putText(frame, "Q", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        if (
+            not indexright and  middleright and  ringright and pinkyright and
+             hand_landmarks.landmark[finger_tips[0]].y > hand_landmarks.landmark[finger_base[0]].y and
+             hand_landmarks.landmark[thumb_tip[0]].y > hand_landmarks.landmark[finger_base[0]].y):
+                 cv2.putText(frame, "Q", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
 
     #s
